@@ -1,4 +1,2 @@
 # Prog-etudes
 Etudes completed from the book of Charles Wetherell "Etudes for Programmers"
-
-I like :pizza:!
