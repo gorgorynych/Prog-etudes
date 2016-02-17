@@ -19,20 +19,6 @@ GameScene::GameScene() :
       i++;
     }
 
-  /*  QColor gridColor = Qt::gray;
-  QPen gridPen(gridColor);
-
-  gridColor.setAlpha(10);
-  gridPen.setWidthF(0.5);
-  gridPen.setStyle(Qt::SolidLine);
-  gridPen.setDashOffset(2);*/
-
-  /*  QColor uniColor = Qt::black;
-  QPen uniPen(uniColor);
-  QBrush uniBrush(uniColor);
-
-  uniPen.setWidth(1);*/
-
   qDebug() << "Initialized successfully";
 }
 
@@ -101,12 +87,8 @@ void GameScene::paint()
   paintUniverse();
 }
 
-void GameScene::paintGrid()    ///Deal with drawing, too slow!!
+void GameScene::paintGrid()
 {
-  //grid->setGeometry(0, 0, viewWidth, viewHeight);
-  //this->addWidget(grid);
-  //qDebug() << "Added widget";
-  //!!!QPainter *p = new QPainter;
   QColor gridColor = Qt::gray;
   QPen gridPen(gridColor);
 
@@ -115,22 +97,17 @@ void GameScene::paintGrid()    ///Deal with drawing, too slow!!
   gridPen.setStyle(Qt::SolidLine);
   gridPen.setDashOffset(2);
 
-  //p->setPen(gridPen);
-
   double cellWidth = viewWidth/uniSize;
   if (cellWidth != 0)
     {
       for (double k = 0; k<=viewWidth; k+=cellWidth)
         this->addLine(k, 0, k, viewHeight, gridPen);
-        //p->drawLine(k, 0, k, viewHeight);
-
     }
   double cellHeight = viewHeight/uniSize;
   if (cellHeight != 0)
     {
       for (double k = 0; k<=viewHeight; k+=cellHeight)
         this->addLine(0, k, viewWidth, k, gridPen);
-        //p->drawLine(0, k, viewWidth, k);
     }
 }
 
@@ -185,7 +162,7 @@ void GameScene::nextGen()
         }
     }
 
-  paint(); //optimize this thing, it causes to redraw grid each time!!
+  paint();
 }
 
 bool GameScene::isAlive(int k, int j)     /// Fix rules to make field toroidal
