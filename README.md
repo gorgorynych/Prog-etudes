@@ -2,6 +2,7 @@
 Etudes completed from the book of Charles Wetherell "Etudes for Programmers"
 
 Completed: none
+
 Partially done: Game of Life
 
 TODO Game of Life:
